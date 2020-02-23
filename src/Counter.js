@@ -9,6 +9,7 @@ function Counter(props){
             <h1>Saya Mesin Penghitung</h1>
             <p>Count: {props.count}</p>
             <button onClick={props.onIncrementClick}>Increment</button>
+            <button onClick={props.onDecrementClick}>Decrement</button>
         </div>
     );
 }
@@ -25,6 +26,13 @@ function mapDispatchtoProps(dispatch){
             console.log('tombol di klik ');
             const action={
                 type:'INCREMENT'
+            }
+            dispatch(action);
+        },
+        onDecrementClick:()=>{
+            console.log('tombol di klik ');
+            const action={
+                type:'DECREMENT'
             }
             dispatch(action);
         }
